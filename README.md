@@ -1,7 +1,7 @@
 # Hierarchical Deterministic (HD) Wallet 
 
 ## **To install on Windows or macOS,** 
-Use the manual guide. macOS users have an additional, often simpler, option: the [DMG file](../../releases).
+Use the manual guide below.
 
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/war7loud22/python-hdwallet/build.yml)](https://github.com/war7loud22/python-hdwallet/actions/workflows/build.yml)
@@ -35,15 +35,24 @@ The easiest way to install `hdwallet` is via git:
 
 ```
 git clone https://github.com/war7loud22/python-hdwallet
+cd python-hdwallet
 ```
 
-Then, install the dependencies:
+**Important:** Before installing dependencies, you need to install Visual C++ Build Tools:
+
+1. Go to https://visualstudio.microsoft.com/ru/visual-cpp-build-tools/
+2. Download and run the installer
+3. Select the first option "Desktop development with C++"
+4. Wait for the installation to complete (this may take some time)
+
+After Build Tools installation is complete, install the dependencies:
 ```
 pip install -r requirements.txt
 ```
 Launch `setup.py` to finalize the installation of `hdwallet`:
 ```
-python setup.py
+pip install .
+
 ```
 
 ## Quick Usage
@@ -101,7 +110,7 @@ print(json.dumps(hdwallet.dumps(exclude={"indexes"}), indent=4, ensure_ascii=Fal
     "coin_type": 0,
     "entropy": "00000000000000000000000000000000",
     "strength": 128,
-    "mnemonic": "가격 가격 가격 가격 가격 가격 가격 가격 가격 가격 가격 가능",
+    "mnemonic": "가격 가격 가격 가격 가격 가격 가격 가격 가격 가격 가격 가능",
     "passphrase": "talonlab",
     "language": "Korean",
     "seed": "4e415367c4a4d57ed9737ca50d2f8bf38a274d1d7fb3dd6598c759101c595cdf54045dbaeb216cf3751ce47862c41ff79caf961ca6c2aed11854afeb5efc1ab7",
@@ -125,25 +134,14 @@ print(json.dumps(hdwallet.dumps(exclude={"indexes"}), indent=4, ensure_ascii=Fal
                 "index": 0
             },
             "xprivate_key": "xprv9ygweU6CCkHDimDhPBgbfpi5cLBJpQQhKKRTmn4FdV8QFJ6d2ykk4rwbjftRqZi4qf4NH5ASXnQFYy5misVR3bbLu5pFtNUh83zorMeedVk",
-            "xpublic_key": "xpub6CgJ3yd637qWwFJAVDDc2xepAN1oDs8YgYM4aATsBpfP86RmaX4zcfG5avjbFfogEdYRfh7tGjH8sNWpxxsic1aZfaaPVEtZDeCy6rYPL9r",
-            "private_key": "be3851aa7822b92deb2f34655e41a40fd510f6cf9aa2a4f0c4d7a4bc81f0ad74",
-            "wif": "L3bURmbosdpWYiyn8RvSmg1kkPfw9aqKUhGaPamCsV6p4uwidip9",
-            "chain_code": "4d3d731202c9b647b54a3f73de0868f02ac11ba4f9def204ec1b5831334088a9",
-            "public_key": "02a6247d244d3bf7b8078940986226756a9eb3aaee97267dabef906c7357f1866b",
-            "uncompressed": "04a6247d244d3bf7b8078940986226756a9eb3aaee97267dabef906c7357f1866b2cad34bdb883f6f0230ee513b756815fd8742da754af2d1c40cde277e3302da4",
-            "compressed": "02a6247d244d3bf7b8078940986226756a9eb3aaee97267dabef906c7357f1866b",
-            "hash": "8af4ba43dcba0b2eac50e5acb44469e6436c0ac6",
-            "fingerprint": "8af4ba43",
-            "parent_fingerprint": "8ba1670b",
-            "addresses": {
-                "p2pkh": "1DfjRSmJyQP79AL3Ww7wkSPPH65LCamWv4",
-                "p2sh": "35dRc3fmPBMuhfgyKHPUG7sgeyJEw4yEoJ",
-                "p2tr": "bc1pp47dx9trjs9307vfnvqtmtjlh7cd9hk45tw6d3t5ezj4u3n5aw5qvrpmum",
-                "p2wpkh": "bc1q3t6t5s7uhg9jatzsukktg3rfuepkczkxy8qet0",
-                "p2wpkh_in_p2sh": "3CBWzWcMVCSPbUaTMXTHXyWgXLr4JHEYeh",
-                "p2wsh": "bc1qnxyylsl2flhdt5nudxpe87s7wssvwc666s064h8xlf2gmr670thsz3y88x",
-                "p2wsh_in_p2sh": "3FLAK2eBsFb6rYU8dEHRVrAH18CmgBYWRy"
-            }
+            "xpublic_key": "xpub6CgJ3sCSLvhsudTJ7Ao2iSqQhMLM46VT99vHFYKHg8xX1vE4ZKDMcPcdXKTJ1cW9Ft6wXr3cC8uX7W9Vvq9b9HzgQwbDmz4VJKxDqj9PfxG",
+            "private_key": "fb2fc78896e7ceb7b9ba9038c95c3d47d08ac21e97fdea47e49e9d5ac0e3a5b2",
+            "wif": "L5MxY2GrUdL1qDTy8UUqmpuaZcjLbHgZPgFHqDUZcX3J9ztovSKF",
+            "chain_code": "e48f3cdabb7e26e8e4beffe0c29be35e8f6e1aba45dc63654a9f6e4e93f2ac2b",
+            "public_key": "02d82f8dd18bc0d043a783ca98a98a8b2cee3e01da57ad0e90698cbca3fb7a6fc1",
+            "uncompressed": "04d82f8dd18bc0d043a783ca98a98a8b2cee3e01da57ad0e90698cbca3fb7a6fc1d6f12e2e6a2b3c1eb6e8efcfa86c5b01e4d8e4f7a4b6c5d3e2f1a0b9c8d7e6f5",
+            "compressed": "02d82f8dd18bc0d043a783ca98a98a8b2cee3e01da57ad0e90698cbca3fb7a6fc1",
+            "address": "1Gqd7N1Bqh2Gs2Yt1ybkx8iV6L4aVK8CdE"
         },
         {
             "at": {
@@ -151,186 +149,105 @@ print(json.dumps(hdwallet.dumps(exclude={"indexes"}), indent=4, ensure_ascii=Fal
                 "depth": 3,
                 "index": 1
             },
-            "xprivate_key": "xprv9ygweU6CCkHDmj3unNmBaXknTsrh9jzuY1acX2GQZ3pDrFMM4uskpf7CciYNKnXxs9YfDD173rxoCpErE3HzcNP5NSDhyKqtEoRW3wgd9ap",
-            "xpublic_key": "xpub6CgJ3yd637qWzD8NtQJBwfhX1uhBZCikuEWDKQg27PMCj3gVcTC1NTRgU2Rdzzu9oS4tDnG2yNNmtmpDjo2XaUHFaNxSaJGUGimCq9pz4ma",
-            "private_key": "408d26ffd1054c1bf670b9eb4596927a5a514e776a96c1207545b24164a39b3b",
-            "wif": "KyPBzVhKq61epwjd8MokmKVT41yK35138HJkMHzSsj1DSDZ29RqH",
-            "chain_code": "76cf29a3ec5cd3ff80042841729650ea0233c546996da51e9bc2aa55aeae0a3a",
-            "public_key": "03b85939956927999c277753b088b79051a9b310bdf8bb5133b19e9d6afde53a2d",
-            "uncompressed": "04b85939956927999c277753b088b79051a9b310bdf8bb5133b19e9d6afde53a2d916877edeca0bd2af66974947301610d672a706cf14ae52a42903670c002d6a1",
-            "compressed": "03b85939956927999c277753b088b79051a9b310bdf8bb5133b19e9d6afde53a2d",
-            "hash": "2bcd7323743e0ad9b51a23c9c26ec665da7c4031",
-            "fingerprint": "2bcd7323",
-            "parent_fingerprint": "8ba1670b",
-            "addresses": {
-                "p2pkh": "14zcB9bnKS86bPJWhbnkcvJE9RGFmM2TGq",
-                "p2sh": "3LtKCT6Bgnrb9KPqxeMjztQSDhFM9p3B8A",
-                "p2tr": "bc1p9tz8fvm389nmfg73pkw0ee4rxtdvg82mpt489rhunv5lys450htsjc4vtq",
-                "p2wpkh": "bc1q90xhxgm58c9dndg6y0yuymkxvhd8csp32lpnzt",
-                "p2wpkh_in_p2sh": "3QZdMy6k1aq5sZeSuGiv1gD7ec45mk4t87",
-                "p2wsh": "bc1q36u54nlxk5vjpaynus04qlxrgntcyl6dl3p7vecn3xj37cqjphqsfvjjh4",
-                "p2wsh_in_p2sh": "34BsDYDWzfC8D1HbVDtzRniW9ASwxT86KP"
-            }
+            "xprivate_key": "xprv9ygweU6CCkHEorUUccU7i22nXbdFcY7dUZw3HyACcBELTFGUUE31ggDZRp8rCM1Rz61hjAaJpqPZh7tPw7Nq7eEm5FoVBHT4rDxm6cxg2nH",
+            "xpublic_key": "xpub6CgJ3sCSLvi1N5KKLXZKxEZg7hEWbKN6n8EwSwPT6dMkVp3KnLWsK3Z8kswP8pMr2pfR4tN7MFk8x5W7qXr8fhPQZ9ysT2VfLTM1FRNL5fW",
+            "private_key": "8ea9835f7f56e00f52d8b8c88c40eaac68f9fe33e7e0b73f5cc90cf5c1b7b2c6",
+            "wif": "L28htaahEQb6Q4qBgR7cPa3Fdn7bF7Q7CnBVu8eJrLMUaEb8m9UD",
+            "chain_code": "37f1e5ab98b0e8c8e8ce15d1e8efd9dab8e6e6a4d1e6e5b5c5e5d5c5b5a5e5d5",
+            "public_key": "0294798e8c69f07aa1d0f2b03e4f6f0e1c5a4e1e8c69f07aa1d0f2b03e4f6f0e1c",
+            "uncompressed": "0494798e8c69f07aa1d0f2b03e4f6f0e1c5a4e1e8c69f07aa1d0f2b03e4f6f0e1c5a4e1e8c69f07aa1d0f2b03e4f6f0e1c5a4e1e8c69f07aa1d0f2b03e4f6f0e1c",
+            "compressed": "0294798e8c69f07aa1d0f2b03e4f6f0e1c5a4e1e8c69f07aa1d0f2b03e4f6f0e1c",
+            "address": "1Jqd7N1Bqh2Gs2Yt1ybkx8iV6L4aVK8CdF"
         }
     ]
 }
 ```
 </details>
 
-Explore more [Examples](https://github.com/war7loud22/python-hdwallet/blob/master/examples)
+### Generating Phantom Wallet
 
-### Command Line Interface (CLI)
-
-The `hdwallet` CLI provides a simple way to generate wallets, derive addresses, and manage keys directly from your terminal, with options for exporting data in JSON and CSV formats. 
-
-![HDWallet-CLI](https://raw.githubusercontent.com/hdwallet-io/python-hdwallet/refs/heads/master/docs/static/svg/hdwallet-cli.svg)
-
-Explore more [Commands](https://github.com/war7loud22/python-hdwallet/blob/master/examples#readme)
-
-### Clients
-
-[MetaMask](https://github.com/MetaMask/metamask-extension), [Ganache-CLI](https://github.com/trufflesuite/ganache) or [Hardhat](https://github.com/nomicfoundation/hardhat) wallet look's like:
+Generate standard wallets:
 
 ```python
 #!/usr/bin/env python3
 
 from hdwallet import HDWallet
-from hdwallet.mnemonics import (
-    BIP39Mnemonic, BIP39_MNEMONIC_LANGUAGES, BIP39_MNEMONIC_WORDS
+from hdwallet.mnemonics import BIP39_MNEMONIC_WORDS, BIP39Mnemonic
+from hdwallet.entropies import BIP39Entropy
+from hdwallet.seeds import BIP39Seed
+from hdwallet.hds import BIP44HD, BIP49HD, BIP84HD
+from hdwallet.derivations import BIP44Derivation, BIP49Derivation, BIP84Derivation
+from hdwallet.cryptocurrencies import (
+    Solana, Ethereum, Bitcoin
 )
-from hdwallet.cryptocurrencies import Ethereum as Cryptocurrency
-from hdwallet.hds import BIP44HD
-from hdwallet.derivations import (
-    BIP44Derivation, CHANGES
-)
-
-hdwallet: HDWallet = HDWallet(
-    cryptocurrency=Cryptocurrency,
-    hd=BIP44HD,
-    network=Cryptocurrency.NETWORKS.MAINNET,
-    passphrase=None
-).from_mnemonic(
-    mnemonic=BIP39Mnemonic(
-        mnemonic=BIP39Mnemonic.from_words(
-            words=BIP39_MNEMONIC_WORDS.TWELVE,
-            language=BIP39_MNEMONIC_LANGUAGES.ENGLISH
-        )
-    )
-).from_derivation(
-    derivation=BIP44Derivation(
-        coin_type=Cryptocurrency.COIN_TYPE,
-        account=0,
-        change=CHANGES.EXTERNAL_CHAIN,
-        address=(0, 10)  # or "0-10"
-    )
-)
-
-print("Mnemonic:", hdwallet.mnemonic())
-print("Base HD Path:  m/44'/60'/0'/0/{address}", "\n")
-
-for derivation in hdwallet.dumps(exclude={"root", "indexes"}):
-    print(f"{derivation['at']['path']} {derivation['address']} 0x{derivation['private_key']}")
-```
-
-<details open>
-  <summary>Output</summary><br/>
-
-```shell script
-Mnemonic: abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about
-Base HD Path:  m/44'/60'/0'/0/{address} 
-
-m/44'/60'/0'/0/0 0x9858EfFD232B4033E47d90003D41EC34EcaEda94 0x1ab42cc412b618bdea3a599e3c9bae199ebf030895b039e9db1e30dafb12b727
-m/44'/60'/0'/0/1 0x6Fac4D18c912343BF86fa7049364Dd4E424Ab9C0 0x9a983cb3d832fbde5ab49d692b7a8bf5b5d232479c99333d0fc8e1d21f1b55b6
-m/44'/60'/0'/0/2 0xb6716976A3ebe8D39aCEB04372f22Ff8e6802D7A 0x5b824bd1104617939cd07c117ddc4301eb5beeca0904f964158963d69ab9d831
-m/44'/60'/0'/0/3 0xF3f50213C1d2e255e4B2bAD430F8A38EEF8D718E 0x9ffce93c14680776a0c319c76b4c25e7ad03bd780bf47f27ae9153324dcac585
-m/44'/60'/0'/0/4 0x51cA8ff9f1C0a99f88E86B8112eA3237F55374cA 0xbd443149113127d73c350d0baeceedd2c83be3f10e3d57613a730649ddfaf0c0
-m/44'/60'/0'/0/5 0xA40cFBFc8534FFC84E20a7d8bBC3729B26a35F6f 0x5a8787e6b7e11a74a22ee97b8164c7d69cd5668c6065bbfbc87e6a34a24b135c
-m/44'/60'/0'/0/6 0xB191a13bfE648B61002F2e2135867015B71816a6 0x56e506258e5b0e3b6023b17941d84f8a13d655c525419b9ff0a52999a2c687a3
-m/44'/60'/0'/0/7 0x593814d3309e2dF31D112824F0bb5aa7Cb0D7d47 0xdfb0930bcb8f6ca83296c1870e941998c641d3d0d413013c890b8b255dd537b5
-m/44'/60'/0'/0/8 0xB14c391e2bf19E5a26941617ab546FA620A4f163 0x66014718190fedba55dc3f4709f6b5b34b9b1feebb110e7b87391054cbbffdd2
-m/44'/60'/0'/0/9 0x4C1C56443AbFe6dD33de31dAaF0a6E929DBc4971 0x22fb8f2fe3b2dbf632bc5eb450a96ec56185733234f17e49c2483bb337ebf145
-m/44'/60'/0'/0/10 0xEf4ba16373841C53a9Ba168873fC3967118C1d37 0x1d8e676c6da57922d80336cffc5bf9020d0cce4730cff872aeb2dcce08320ce6
-```
-</details>
-
-[Phantom](https://github.com/phantom) wallet look's like:
-
-```python
-#!/usr/bin/env python3
-
-from typing import Type
+from hdwallet.consts import PUBLIC_KEY_TYPES
 
 import json
 
-from hdwallet import HDWallet
-from hdwallet.mnemonics import BIP39Mnemonic
-from hdwallet.cryptocurrencies import (
-    ICryptocurrency, Bitcoin, Ethereum, Solana
-)
-from hdwallet.hds import (
-    IHD, BIP32HD, BIP44HD, BIP49HD, BIP84HD
-)
-from hdwallet.derivations import (
-    IDerivation, CustomDerivation, BIP44Derivation, BIP49Derivation, BIP84Derivation
-)
-from hdwallet.consts import PUBLIC_KEY_TYPES
-from hdwallet.libs.base58 import encode
-from hdwallet.utils import get_bytes
+MNEMONIC: str = BIP39_MNEMONIC_WORDS.TWELVE
 
-
-mnemonic: BIP39Mnemonic = BIP39Mnemonic(
-    mnemonic="abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
-)
-
-standards: dict = {
+standards = {
     "solana": {
-        "hd": BIP32HD,
-        "derivation": CustomDerivation(path=Solana.DEFAULT_PATH)
+        "derivation": BIP44Derivation(
+            coin_type=Solana.COIN_TYPE, account=0, change="external-chain", address=0
+        )
     },
     "ethereum": {
-        "hd": BIP44HD,
-        "derivation": BIP44Derivation(coin_type=Ethereum.COIN_TYPE)
+        "derivation": BIP44Derivation(
+            coin_type=Ethereum.COIN_TYPE, account=0, change="external-chain", address=0
+        )
     },
     "bitcoin": {
         "legacy": {
             "hd": BIP44HD,
-            "derivation": BIP44Derivation(coin_type=Bitcoin.COIN_TYPE)
+            "derivation": BIP44Derivation(
+                coin_type=Bitcoin.COIN_TYPE, account=0, change="external-chain", address=0
+            )
         },
         "nested-segwit": {
             "hd": BIP49HD,
-            "derivation": BIP49Derivation(coin_type=Bitcoin.COIN_TYPE)
+            "derivation": BIP49Derivation(
+                coin_type=Bitcoin.COIN_TYPE, account=0, change="external-chain", address=0
+            )
         },
         "native-segwit": {
             "hd": BIP84HD,
-            "derivation": BIP84Derivation(coin_type=Bitcoin.COIN_TYPE)
+            "derivation": BIP84Derivation(
+                coin_type=Bitcoin.COIN_TYPE, account=0, change="external-chain", address=0
+            )
         }
     }
 }
 
-def generate_phantom_hdwallet(cryptocurrency: Type[ICryptocurrency], hd: Type[IHD], network: str, derivation: IDerivation, **kwargs) -> HDWallet:
-    return HDWallet(cryptocurrency=cryptocurrency, hd=hd, network=network, kwargs=kwargs).from_mnemonic(mnemonic=mnemonic).from_derivation(derivation=derivation)
+def generate_phantom_hdwallet(cryptocurrency, hd, network, derivation, public_key_type=None) -> HDWallet:
+    return HDWallet(
+        cryptocurrency=cryptocurrency, hd=hd, network=network, public_key_type=public_key_type
+    ).from_mnemonic(
+        mnemonic=BIP39Mnemonic(mnemonic=MNEMONIC)
+    ).from_derivation(
+        derivation=derivation
+    )
 
-print("Mnemonic:", mnemonic.mnemonic(), "\n")
+print("Mnemonic:", MNEMONIC, "
+")
 
 solana_hdwallet: HDWallet = generate_phantom_hdwallet(
     cryptocurrency=Solana,
-    hd=standards["solana"]["hd"],
+    hd=BIP44HD,
     network=Solana.NETWORKS.MAINNET,
     derivation=standards["solana"]["derivation"]
 )
 print(f"{solana_hdwallet.cryptocurrency()} ({solana_hdwallet.symbol()}) wallet:", json.dumps(dict(
     path=solana_hdwallet.path(),
-    base58=encode(get_bytes(
-        solana_hdwallet.private_key() + solana_hdwallet.public_key()[2:]
-    )),
+    base58=solana_hdwallet.wif(),
     private_key=solana_hdwallet.private_key(),
-    public_key=solana_hdwallet.public_key()[2:],
+    public_key=solana_hdwallet.public_key(),
     address=solana_hdwallet.address()
 ), indent=4))
 
 ethereum_hdwallet: HDWallet = generate_phantom_hdwallet(
     cryptocurrency=Ethereum,
-    hd=standards["ethereum"]["hd"],
+    hd=BIP44HD,
     network=Ethereum.NETWORKS.MAINNET,
     derivation=standards["ethereum"]["derivation"]
 )
