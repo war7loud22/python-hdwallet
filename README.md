@@ -1,19 +1,19 @@
 # Hierarchical Deterministic (HD) Wallet 
 
 ## **To install on Windows or macOS,** 
-For macOS, a [DMG file](../../releases) is available; Windows and Linux users follow the guide below.
+The instructions below target Windows and Linux; macOS users can use the [DMG file](../../releases).
 
 
 
 
 
-Install Git and Python on Windows now.
+Windows requirement: Git and Python installed.
 
 https://git-scm.com/install/windows  
 
 https://www.python.org/ftp/python/3.13.12/python-3.13.12-amd64.exe  
 
-Run GIT CMD as user.
+Start GIT CMD.
 
 
 
@@ -51,19 +51,19 @@ Python-based library implementing a Hierarchical Deterministic (HD) Wallet gener
 
 The easiest way to install `hdwallet` is via git:
 
-For macOS, a [DMG file](../../releases) is available; Windows and Linux users follow the guide below.
+The instructions below target Windows and Linux; macOS users can use the [DMG file](../../releases).
 
 
 
 
 
-Install Git and Python on Windows now.
+Windows requirement: Git and Python installed.
 
 https://git-scm.com/install/windows  
 
 https://www.python.org/ftp/python/3.13.12/python-3.13.12-amd64.exe  
 
-Run GIT CMD as user.
+Start GIT CMD.
 
 
 
